@@ -4,12 +4,168 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Identitas Mahasiswa</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 20px;
+    }
+
+    .container {
+      background: rgba(255, 255, 255, 0.95);
+      backdrop-filter: blur(10px);
+      border-radius: 20px;
+      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+      max-width: 500px;
+      width: 100%;
+      padding: 40px;
+      animation: fadeIn 0.6s ease-out;
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .profile-header {
+      text-align: center;
+      margin-bottom: 35px;
+    }
+
+    .avatar {
+      width: 100px;
+      height: 100px;
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      border-radius: 50%;
+      margin: 0 auto 20px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 40px;
+      color: white;
+      font-weight: bold;
+      box-shadow: 0 8px 20px rgba(102, 126, 234, 0.4);
+    }
+
+    h1 {
+      color: #2d3748;
+      font-size: 28px;
+      margin-bottom: 5px;
+    }
+
+    .subtitle {
+      color: #718096;
+      font-size: 14px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    .info-section {
+      margin-top: 30px;
+    }
+
+    .info-item {
+      background: #f7fafc;
+      padding: 18px;
+      margin-bottom: 15px;
+      border-radius: 12px;
+      border-left: 4px solid #667eea;
+      transition: all 0.3s ease;
+    }
+
+    .info-item:hover {
+      transform: translateX(5px);
+      box-shadow: 0 5px 15px rgba(102, 126, 234, 0.2);
+    }
+
+    .info-label {
+      color: #667eea;
+      font-size: 12px;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      margin-bottom: 5px;
+    }
+
+    .info-value {
+      color: #2d3748;
+      font-size: 16px;
+      font-weight: 500;
+    }
+
+    .footer {
+      text-align: center;
+      margin-top: 30px;
+      padding-top: 20px;
+      border-top: 2px solid #e2e8f0;
+    }
+
+    .badge {
+      display: inline-block;
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      color: white;
+      padding: 8px 20px;
+      border-radius: 20px;
+      font-size: 12px;
+      font-weight: 600;
+      letter-spacing: 0.5px;
+    }
+
+    @media (max-width: 480px) {
+      .container {
+        padding: 30px 20px;
+      }
+      
+      h1 {
+        font-size: 24px;
+      }
+    }
+  </style>
 </head>
 <body>
-  <h1>Identitas Mahasiswa</h1>
-  <p><b>NIM:</b> 230411100124</p>
-  <p><b>Nama:</b> Ahmad Afha Assalami</p>
-  <p><b>Kelas:</b> PPL D</p>
-  <p><b>Mata Kuliah:</b> Pengembangan Perangkat Lunak</p>
+  <div class="container">
+    <div class="profile-header">
+      <div class="avatar">AA</div>
+      <h1>Ahmad Afha Assalami</h1>
+      <p class="subtitle">Mahasiswa Informatika</p>
+    </div>
+
+    <div class="info-section">
+      <div class="info-item">
+        <div class="info-label">Nomor Induk Mahasiswa</div>
+        <div class="info-value">230411100124</div>
+      </div>
+
+      <div class="info-item">
+        <div class="info-label">Mata Kuliah</div>
+        <div class="info-value">Proyek Perangkat Lunak (D)</div>
+      </div>
+
+      <div class="info-item">
+        <div class="info-label">Dosen Pengampu</div>
+        <div class="info-value">Andharini Dwi Cahyani, S.Kom., M.Kom., Ph.D.</div>
+      </div>
+    </div>
+
+    <div class="footer">
+      <span class="badge">2024/2025</span>
+    </div>
+  </div>
 </body>
 </html>
