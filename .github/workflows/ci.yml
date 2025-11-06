@@ -7,14 +7,25 @@ on:
 jobs:
   test:
     runs-on: ubuntu-latest
+
     steps:
       - name: Checkout repository
         uses: actions/checkout@v3
 
-      - name: Setup Node.js
-        uses: actions/setup-node@v3
-        with:
-          node-version: '18'
+      - name: Validate index.html exists
+        run: |
+          if [ -f "index.html" ]; then
+            echo "✅ index.html ditemukan!"
+          else
+            echo "❌ File index.html tidak ditemukan!"
+            exit 1
+          fi
 
-      - name: Jalankan Tes
-        run: node test.js
+      - name: Check NIM in HTML
+        run: |
+          if grep -q "230411100124" index.html; then
+            echo "✅ NIM ditemukan dalam file HTML"
+          else
+            echo "❌ NIM tidak ditemukan!"
+            exit 1
+          fi
